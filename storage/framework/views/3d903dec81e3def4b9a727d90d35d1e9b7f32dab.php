@@ -1,0 +1,1 @@
+sdfsdfsdf<?php /**PATH /home/l/lutsyi1l/mikros.contentim.ru/resources/views/shared.blade.php ENDPATH**/ ?>

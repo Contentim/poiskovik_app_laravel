@@ -1,0 +1,1 @@
+234234234<?php /**PATH /home/l/lutsyi1l/mikros.contentim.ru/resources/views/site/shared.blade.php ENDPATH**/ ?>
