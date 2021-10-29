@@ -1,32 +1,17 @@
-<!DOCTYPE html>
-<html id="release" :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
-    <?php echo $__env->make('site.head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <body>
-        
-        <div
-          class="flex h-screen bg-gray-50 dark:bg-gray-900"
-          :class="{ 'overflow-hidden': isSideMenuOpen }" 
-        >
-            <?php echo $__env->make('site.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            
-            <main class="h-full pb-16 overflow-y-auto">
+<?php $__env->startSection('content'); ?>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">File Uploads</div>
 
-            <div class="container grid px-6 mx-auto">
-                <h1 class="text-center md:text-left my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Главная</h1>
-              <!-- card -->
-              <div class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100">
-                <!-- content -->
-                <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-                  <div class="font-semibold text-lg leading-tight"><a href="https://selt.contentim.ru/post/rasskazhi-ej-skazku">Расскажи ей сказку</a></div>
-                  <!-- { % if post.excerpt %} -->
-                  <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
-                    Опубликовано • Jun 19, 2019
-                  </p>
+                    <div class="card-body">
+                        <attachment-form></attachment-form>
+                    </div>
                 </div>
-              </div>
             </div>
-        </main>
         </div>
+    </div> 
+<?php $__env->stopSection(); ?>
 
-    </body>
-</html><?php /**PATH /home/l/lutsyi1l/mikros.contentim.ru/resources/views/home.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/l/lutsyi1l/mikros.contentim.ru/resources/views/home.blade.php ENDPATH**/ ?>

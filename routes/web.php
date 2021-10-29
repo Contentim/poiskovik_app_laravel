@@ -26,3 +26,20 @@ Route::get('/vertical', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Auth::routes();
+
+//Route::post('/converter', 'ConverterController@store');
+
+//Route::get('/', 'HomeController@index')->name('home');
+//Route::post('/', 'HomeController@store');
+
+/*Route::post('/', function(){
+//    $img = Image::make('foo.jpg')->resize(300, 200);
+
+//    return $img->response('jpg');
+});*/
+
+
+
+

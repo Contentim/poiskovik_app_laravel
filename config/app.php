@@ -175,6 +175,17 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * package intervention/image
+         * INSTALL: composer require intervention/image
+         * */
+        Intervention\Image\ImageServiceProvider::class,
+
+        /*
+         * anam/phantommagick
+         * */
+//        Anam\PhantomMagick\ConverterServiceProvider::class
+
     ],
 
     /*
@@ -225,6 +236,16 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * intervention/image
+         * */
+        'Image' => Intervention\Image\Facades\Image::class,
+
+        /*
+         * anam/phantommagick
+         * */
+        'Converter' => Anam\PhantomMagick\Facades\Converter::class
 
     ],
 

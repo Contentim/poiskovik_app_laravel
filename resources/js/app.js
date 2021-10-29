@@ -5,8 +5,14 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+import EditorJS from '@editorjs/editorjs'
+window.EditorJS = EditorJS
+var htmlToImage = require('html-to-image');
+
+import store from './store'
+// import * as mutations from './store/mutation-types'
+// import * as actions from './store/action-types'
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,14 +25,26 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+Vue.component('sidebar-desktop', require('./components/SidebarDesktop.vue').default);
+Vue.component('sidebar-mobile', require('./components/SidebarMobile.vue').default);
+Vue.component('site-header', require('./components/Header.vue').default);
+Vue.component('horizontal', require('./components/Horizontal.vue').default);
+Vue.component('horizontal-body', require('./components/HorizontalBody.vue').default);
+Vue.component('vertical', require('./components/Vertical.vue').default);
+Vue.component('site-main', require('./components/Main.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('demo', require('./components/DemoComponent.vue').default);
+
+Vue.component('attachment-form', require('./components/AttachmentForm.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
- */
+**/
 
 const app = new Vue({
     el: '#app',
+    store,
+    // router
 });
