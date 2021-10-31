@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 30px;
             }
 
             .links > a {
@@ -67,7 +67,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Текст этой страницы еще не придуман. <br>По вопросам техподдержки пишите в Телеграм - <b>https://t.me/contentim</b>
+                    Текст этой страницы еще не придуман. <br>По вопросам техподдержки пишите в Телеграм - <b><a href="https://t.me/contentim">https://t.me/contentim</a></b>
                 </div>
 
                 <div class="links">
