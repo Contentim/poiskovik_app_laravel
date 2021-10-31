@@ -7,11 +7,11 @@
     <link rel="icon" type="image/png" href="https://selt.contentim.ru/themes/responsiv-clean/assets/images/contentim_favicon.png">
 
     @if (Request::path() === '/')
-        <title>Конструктор ориентировок без вести пропавших</title>
+        <title>Конструктор ориентировок поиска пропавших без вести </title>
     @elseif (Request::path() === 'horizontal')
-        <title>Конструктор ориентировок без вести пропавших - Горизонтальная ориентация</title>
+        <title>Конструктор ориентировок поиска пропавших без вести - Горизонтальная ориентация</title>
     @elseif (Request::path() === 'vertical')
-        <title>Конструктор ориентировок без вести пропавших - Вертикальная ориентация</title>
+        <title>Конструктор ориентировок поиска пропавших без вести - Вертикальная ориентация</title>
     @elseif (Request::path() === 'about')
         <title>От автора и вопросы поддержки пользователей</title>
     @endif
@@ -100,11 +100,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
 
     <style>
+        .text-orange {
+            color: #F34606 !important;
+        }
         .bg-orange {
             background: #F34606 !important;
         }
         .bg-orange:hover {
             background: #cc7a00 !important;
+        }
+        #success {
+            width: 300px;
+            right: 30px;
+            height: 100px;
+            top: 10px;
+            background: #41c59b !important;
+            /*border-color: #e2e8f0 !important;*/
+        }
+        #close_success {
+            top: 2px;
+            right: 7px;
         }
     </style>
 

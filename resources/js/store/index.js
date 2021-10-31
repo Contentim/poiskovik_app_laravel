@@ -247,7 +247,9 @@ export default new Vuex.Store({
             selected: 101
         },
         photo: '',
-        defaultColor: '#ff0000'
+        defaultColor: '#ff0000',
+        loader: false,
+        on_success: false
     },
     modules: {
         // users
@@ -266,15 +268,14 @@ export default new Vuex.Store({
         returnPhoto(state, base64){
             state.photo = base64;
         },
-
-        defaultTextBodyHorizontal(state){
-
-        },
-        returnDefaultTextFooterHorizontal(state){
-
-        },
         updateDefaultColor(state, value){
             state.defaultColor = value;
+        },
+        loader(state){
+            state.loader = !state.loader;
+        },
+        success(state){
+            state.on_success = !state.on_success;
         }
     },
     getters: {

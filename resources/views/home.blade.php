@@ -1,17 +1,13 @@
-@extends('layouts.app')
-{{ Request::path() }}
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">File Uploads</div>
+<!DOCTYPE html>
+<html id="release" :class="{ 'theme-dark': dark }" x-data="data()" lang="ru">
+@include('site.head')
+<body>
 
-                    <div class="card-body">
-                        <attachment-form></attachment-form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+<div id="app" class="flex w-full h-screen bg-gray-50 dark:bg-gray-900">
+    <home></home>
+</div>
+
+<script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>
+

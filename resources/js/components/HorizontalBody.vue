@@ -1,6 +1,11 @@
 <template>
   <main class="h-full p@b-16 overflow-y-auto bg-white">
-    <div class="c@ontainer grid p-2 mx-auto">
+    <div class="c@ontainer grid p-2 mx-auto relative">
+
+      <div class="absolute w-full h-full bg-white z-10 px-2" id="loader" v-if="this.$store.state.loader == true">
+        <div class="text-3xl font-medium"><span class="text-orange">Подождите.</span> Преобразуем текст в изображение...</div>
+      </div>
+
       <div class="flex text-xl mb-6">
 
         <div class="mr-4">
@@ -277,17 +282,23 @@ export default {
   methods: {
     converter(){
       let self = this;
+
+      self.$store.commit('loader');
+
       htmlToImage.toPng(document.getElementById('form-horizontal'))
           .then(function (dataUrl) {
             var img = new Image();
             img.src = dataUrl;
-            // document.body.appendChild(img);
-
-            // console.log(img);
 
             localStorage.tab = self.tab = 'explorer';
             self.menu_trigger = self.menu_editor = false;
             self.menu_explorer = true;
+            self.$store.commit('loader');
+
+            self.$store.commit('success');
+            setTimeout(function(){
+              self.$store.commit('success');
+            },6000)
 
             document.getElementById('image-horizontal').innerHTML = '';
             document.getElementById('image-horizontal').append(img);

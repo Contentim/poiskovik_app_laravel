@@ -29,6 +29,7 @@ Vue.component('sidebar-desktop', require('./components/SidebarDesktop.vue').defa
 Vue.component('sidebar-mobile', require('./components/SidebarMobile.vue').default);
 Vue.component('site-header', require('./components/Header.vue').default);
 Vue.component('horizontal', require('./components/Horizontal.vue').default);
+Vue.component('home', require('./components/Home.vue').default);
 Vue.component('horizontal-body', require('./components/HorizontalBody.vue').default);
 Vue.component('vertical', require('./components/Vertical.vue').default);
 Vue.component('site-main', require('./components/Main.vue').default);
