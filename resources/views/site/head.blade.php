@@ -6,16 +6,36 @@
     <link rel="icon" type="image/png" href="https://selt.contentim.ru/themes/responsiv-clean/assets/images/contentim_favicon.png">
 
     @if (Request::path() === '/')
-        <title>Конструктор ориентировок поиска пропавших без вести </title>
+        <title>Конструктор ориентировок поиска пропавших без вести</title>
+        <meta property="og:title" content="Конструктор ориентировок поиска пропавших без вести">
+        <meta name="twitter:title" content="Конструктор ориентировок поиска пропавших без вести">
+
+        <meta property="og:url" content="https://poiskovik.app/">
+        <link rel="canonical" href="https://poiskovik.app/">
     @elseif (Request::path() === 'horizontal')
         <title>Конструктор ориентировок поиска пропавших без вести - Горизонтальная ориентация</title>
+        <meta property="og:title" content="Конструктор ориентировок поиска пропавших без вести - Горизонтальная ориентация">
+        <meta name="twitter:title" content="Конструктор ориентировок поиска пропавших без вести - Горизонтальная ориентация">
+
+        <meta property="og:url" content="https://poiskovik.app/horizontal">
+        <link rel="canonical" href="https://poiskovik.app/horizontal">
     @elseif (Request::path() === 'vertical')
         <title>Конструктор ориентировок поиска пропавших без вести - Вертикальная ориентация</title>
+        <meta property="og:title" content="Конструктор ориентировок поиска пропавших без вести - Вертикальная ориентация">
+        <meta name="twitter:title" content="Конструктор ориентировок поиска пропавших без вести - Вертикальная ориентация">
+
+        <meta property="og:url" content="https://poiskovik.app/vertical">
+        <link rel="canonical" href="https://poiskovik.app/vertical">
     @elseif (Request::path() === 'about')
-        <title>От автора и вопросы поддержки пользователей</title>
+        <title>От автора конструктора и вопросы поддержки пользователей</title>
+        <meta property="og:title" content="От автора конструктора и вопросы поддержки пользователей">
+        <meta name="twitter:title" content="От автора конструктора и вопросы поддержки пользователей">
+
+        <meta property="og:url" content="https://poiskovik.app/about">
+        <link rel="canonical" href="https://poiskovik.app/about">
     @endif
 
-    <link rel="canonical" href="https://poiskovik.app/">
+
     <meta name="yandex-verification" content="1c96194a3deb430a" />
 
     <!-- Yandex.Metrika counter -->
@@ -34,15 +54,19 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/73503937" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <!-- Open Graph -->
     <meta property="og:locale" content="ru_RU">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="">
+    <meta property="og:image" content="{{ URL::asset('/seo/horizontal_23561141_2021.png')}}"/>
+    <meta name="twitter:image" content="{{ URL::asset('/seo/horizontal_23561141_2021.png')}}">
+
     <meta property="og:description" content="Бесплатный конструктор ориентировок преследует лишь одну цель - облегчить труд тех, кому в силу своей волонтерской или профессиональной занятости необходимо создавать объявления о поиске без вести пропавших.">
-    <meta property="og:url" content="https://poiskovik.app/">
     <meta property="og:site_name" content="poiskovik.app - конструктор ориентировок поиска пропавших без вести">
-    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Бесплатный конструктор ориентировок преследует лишь одну цель - облегчить труд тех, кому в силу своей волонтерской или профессиональной занятости необходимо создавать объявления о поиске без вести пропавших.">
-    <meta name="twitter:title" content="https://poiskovik.app/">
+
 
     {{--<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ URL::asset('/css/css2.css')}}">

@@ -199,14 +199,14 @@
                   <div class="info flex flex-wrap justify-between w-full">
 
                     <div class="col-1 p-0 m-0 relative w-2/5">
-                      <div id="photo-container" v-if="$store.state.photo" class="h-full">
-                        <img :src="$store.state.photo" class="img-responsive border-4" :style="{'border-color': this.$store.state.defaultColor}" width="374" height="445">
+                      <div id="photo-container" v-if="$store.state.photo" class="" :style="{'border-color': this.$store.state.defaultColor}">
+                        <img :src="$store.state.photo" class="img-responsive" width="374">
                         <button
                             class="absolute top-0 left-0 absolute top-0 left-0 bg-white px-4 py-1 border-2 border-red-500 opacity-0"
                             v-if="$store.state.photo" @click="removePhoto" >Удалить фото</button>
                       </div>
                       <div v-else class="img border-4 " :style="{'border-color': this.$store.state.defaultColor}">
-                       <form  id="upload_img" class="flex">
+                        <form  id="upload_img" class="flex">
                           <div class="upload_img_container">
                             <div class="form-group">
                               <label class="label">
@@ -423,390 +423,391 @@ export default {
 </script>
 
 <style>
-  #form-vertical {
-    width: 835px;
-    height: 1220px;
-    display: block;
-    /* margin: auto;*/
-  }
-  #form-vertical .level_1 {
-    position: relative;
-    width: 835px;
-    height: 1220px;
-    background: #e21e22;
-  }
+#form-vertical {
+  width: 835px;
+  height: 1220px;
+  display: block;
+  /* margin: auto;*/
+}
+#form-vertical .level_1 {
+  position: relative;
+  width: 835px;
+  height: 1220px;
+  background: #e21e22;
+}
 
-  [contenteditable] {
-    outline: 0px solid transparent;
-  }
-  #form-vertical .editor-top, .editor-bottom {
-    position: absolute;
-    width: 100%;
-  }
-  #form-vertical .editor-top {
-    top: 6px;
-  }
-  #form-vertical .editor-bottom {
-    bottom: 7px;
-  }
-  #form-vertical .editor-top div, .editor-bottom div {
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-
-  #form-vertical .level_2 {
-    border: 20px solid #e21e22;
-    /*height: calc(100% - 120px);*/
-    height: calc(100% - 0px);
-    padding: 15px;
-    /*width: calc(100% - 70px);*/
-    width: calc(100% - 0px);
-    background: #fff;
-    border-top: 45px solid #e21e22;
-    border-bottom: 45px solid #e21e22;
-  }
-  #form-vertical .content {
-    width: 100%;
-    height: 100%;
-  }
-  #form-vertical .info {
-    min-height: 575px;
-    /*height: inherit;*/
-  }
-  #form-vertical .col-1 {
-    /*width: 380px;*/
-    height: inherit;
-    /*float: left;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    overflow: hidden;
-    /*position: relative;*/
-  }
-  #form-vertical .col-1 .img {
-    position: relative;
-    /*border: 3px solid #e21e22;*/
-    height: 451px;
-    overflow: hidden;
-  }
-  #form-vertical #upload_img {
-    height: 100%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  #form-vertical #upload_img .wrapp__info {
-    color: grey;
-    transition: 200ms color;
-    text-align: center;
-    margin: 0 0 10px;
-  }
-  #form-vertical #upload_img .wrapp__info div {
-    margin: 0;
-    line-height: normal;
-  }
-  #form-vertical #upload_img .wrapp__info .size {
-    font-weight: 600;
-    color: #111;
-  }
-  #form-vertical #upload_img .upload_img_container {
-    margin: 0 0 15px;
-  }
-  #form-vertical #upload_img .upload_img_container .form-group {
-    padding: 0;
-    margin: 0;
-    width: 200px;
-  }
-  #form-vertical #upload_img .upload_img_container .label {
-    /*width: 140px;*/
-    border: 2px dashed grey;
-    border-radius: 5px;
-    display: block;
-    padding: 1.2em;
-    transition: border 300ms ease;
-    cursor: pointer;
-    text-align: center;
-  }
-  #form-vertical #upload_img .upload_img_container .label i,
-  #form-vertical .upload_img_container .label .title {
-    color: grey;
-    transition: 200ms color;
-  }
-  #form-vertical #upload_img .upload_img_container .label i {
-    display: block;
-    font-size: 42px;
-    padding-bottom: 16px;
-  }
-  #form-vertical #upload_img .input__file {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-  }
-  #form-vertical #upload_img .upload_img_container input[type=file] {
-    outline: 0;
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-  }
-  #form-vertical #photo-container:hover button {
-    opacity: 1;
-  }
-
-  #form-vertical #remove_image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #555;
-    line-height: normal;
-    width: 183px;
-    margin: auto;
-    border: 1px solid #555;
-    padding: 10px 0;
-    background: #fff;
-    opacity: .3;
-  }
-  #form-vertical #remove_image:hover {
-    opacity: 1;
-  }
-
-  #form-vertical .notification {
-    font-family: 'DejaVu Sans';
-    font-size: 120px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 70px;
-  }
-  #form-vertical .notification .item_1 {
-    /*margin: 0 0 20px;*/
-  }
-  #form-vertical .notification .item_2 {
-    font-size: 170px;
-    letter-spacing: 20px;
-    text-align: center;
-  }
-  #form-vertical .notification .item_3.mod_101 {/*человек*/
-    font-size: 120px;
-  }
-  #form-vertical .notification .item_3.mod_102 { /*ребенок*/
-    font-size: 120px;
-  }
-  #form-vertical .notification .item_3.mod_103 {/*подросток*/
-    font-size: 100px;
-  }
-  #form-vertical .notification .item_3.mod_104 {/*родственников*/
-    font-size: 72px;
-  }
-
-  /* col-2 */
-  #form-vertical .col-2 {
-    /*padding: 0;*/
-    /*float: right;*/
-    /*width: 380px;*/
-    /*margin: 0;*/
-    /*position: relative;*/
-    height: inherit;
-  }
-  #form-vertical .editor {
-    position: relative;
-    text-align: left;
-    max-height: 605px;
-    overflow: hidden;
-  }
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+#form-vertical .editor-top, .editor-bottom {
+  position: absolute;
+  width: 100%;
+}
+#form-vertical .editor-top {
+  top: 6px;
+}
+#form-vertical .editor-bottom {
+  bottom: 7px;
+}
+#form-vertical .editor-top div, .editor-bottom div {
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  text-transform: uppercase;
+}
 
 
+#form-vertical .level_2 {
+  border: 20px solid #e21e22;
+  /*height: calc(100% - 120px);*/
+  height: calc(100% - 0px);
+  padding: 15px;
+  /*width: calc(100% - 70px);*/
+  width: calc(100% - 0px);
+  background: #fff;
+  border-top: 45px solid #e21e22;
+  border-bottom: 45px solid #e21e22;
+}
+#form-vertical .content {
+  width: 100%;
+  height: 100%;
+}
+#form-vertical .info {
+  min-height: 575px;
+  /*height: inherit;*/
+}
+#form-vertical .col-1 {
+  /*width: 380px;*/
+  height: inherit;
+  /*float: left;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+  overflow: hidden;
+  /*position: relative;*/
+}
+#form-vertical .col-1 .img {
+  position: relative;
+  /*border: 3px solid #e21e22;*/
+  height: 451px;
+  overflow: hidden;
+}
+#form-vertical #upload_img {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#form-vertical #upload_img .wrapp__info {
+  color: grey;
+  transition: 200ms color;
+  text-align: center;
+  margin: 0 0 10px;
+}
+#form-vertical #upload_img .wrapp__info div {
+  margin: 0;
+  line-height: normal;
+}
+#form-vertical #upload_img .wrapp__info .size {
+  font-weight: 600;
+  color: #111;
+}
+#form-vertical #upload_img .upload_img_container {
+  margin: 0 0 15px;
+}
+#form-vertical #upload_img .upload_img_container .form-group {
+  padding: 0;
+  margin: 0;
+  width: 200px;
+}
+#form-vertical #upload_img .upload_img_container .label {
+  /*width: 140px;*/
+  border: 2px dashed grey;
+  border-radius: 5px;
+  display: block;
+  padding: 1.2em;
+  transition: border 300ms ease;
+  cursor: pointer;
+  text-align: center;
+}
+#form-vertical #upload_img .upload_img_container .label i,
+#form-vertical .upload_img_container .label .title {
+  color: grey;
+  transition: 200ms color;
+}
+#form-vertical #upload_img .upload_img_container .label i {
+  display: block;
+  font-size: 42px;
+  padding-bottom: 16px;
+}
+#form-vertical #upload_img .input__file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+#form-vertical #upload_img .upload_img_container input[type=file] {
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+#form-vertical #photo-container {
+  max-height: 485px;
+  border-width: 4px;
+  border-style: solid;
+  overflow: hidden;
+}
+#form-vertical #photo-container:hover button {
+  opacity: 1;
+}
 
-  /* editor */
-  #form-vertical .codex-editor {
-    position: relative;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 1;
-  }
-  #form-vertical #editorjs-title .codex-editor__redactor,
-  #form-vertical #editorjs-subtitle .codex-editor__redactor,
-  #form-vertical #editorjs-editor .codex-editor__redactor,
-  #form-vertical #editorjs-footer .codex-editor__redactor,
-  #form-vertical #editorjs-top .codex-editor__redactor,
-  #form-vertical #editorjs-bottom .codex-editor__redactor {
-    padding: 0 !important;
-  }
-  @media (min-width: 651px){
-    #form-vertical .codex-editor--narrow .codex-editor__redactor {
-      margin-right: 50px;
-    }
-  }
-  #form-vertical .ce-block:first-of-type {
-    margin-top: 0;
-    padding-top: 6px;
-  }
-  #form-vertical .ce-block__content {
-    position: relative;
-    max-width: 650px;
-    margin: 0 auto;
-    -webkit-transition: background-color .15s ease;
-    transition: background-color .15s ease;
-  }
-  #form-vertical #editorjs-title .ce-block__content,
-  #form-vertical #editorjs-subtitle .ce-block__content,
-  #form-vertical #editorjs-editor .ce-block__content,
-  #form-vertical #editorjs-footer .ce-block__content {
-    max-width: 100%;
-  }
-  #form-vertical .ce-header {
-    color: #000;
-    padding: 1em 0;
-    margin: 0;
-    margin-bottom: -0.9em;
-    line-height: 1.5em;
-    outline: none;
-    font-family: 'DejaVu Sans';
-    font-weight: 700;
-  }
-  #form-vertical h1.ce-header {
-    padding: 0 0 5px;
-    line-height: 30px;
-    margin: 0;
-    font-size: 30px;
-    text-transform: uppercase;
-    text-indent: -1px;
-  }
-  #form-vertical h2.ce-header {
-    line-height: 20px;
-    padding: 0 0 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-    display: block;
-    margin: 0;
-  }
-  #form-vertical .ce-paragraph {
-    line-height: 1.6em;
-    outline: none;
-  }
-  #form-vertical .ce-paragraph {
-    font-family: 'DejaVu Sans';
-    font-size: 20px;
-    padding: 0 0 5px;
-    line-height: 1.2em;
-    margin: 0;
-  }
-  #form-vertical .ce-block b {
-    font-weight: 700;
-  }
+#form-vertical #remove_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #555;
+  line-height: normal;
+  width: 183px;
+  margin: auto;
+  border: 1px solid #555;
+  padding: 10px 0;
+  background: #fff;
+  opacity: .3;
+}
+#form-vertical #remove_image:hover {
+  opacity: 1;
+}
 
-  /* footer */
-  #form-vertical .footer {
-    padding: 0 0 15px;
-  }
-  #form-vertical .col-2 .footer {
-    border-top: 4px solid #e21e22;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 9;
-    padding-top: 10px;
-    color: #000;
-  }
-  #form-vertical .footer .ce-header {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  #form-vertical .footer h1.ce-header {
-    font-size: 44px;
-    text-transform: initial;
-    line-height: 44px;
-  }
-  #form-vertical .footer h2.ce-header {
-    line-height: 30px;
-    font-size: 30px;
-    text-transform: uppercase;
-  }
-  #form-vertical .footer .ce-paragraph {
-    padding: 5px 0;
-    line-height: normal;
-    font-size: 20px;
-    text-align: center;
-  }
+#form-vertical .notification {
+  font-family: 'DejaVu Sans';
+  font-size: 120px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 70px;
+}
+#form-vertical .notification .item_1 {
+  /*margin: 0 0 20px;*/
+}
+#form-vertical .notification .item_2 {
+  font-size: 170px;
+  letter-spacing: 20px;
+  text-align: center;
+}
+#form-vertical .notification .item_3.mod_101 {/*человек*/
+  font-size: 120px;
+}
+#form-vertical .notification .item_3.mod_102 { /*ребенок*/
+  font-size: 120px;
+}
+#form-vertical .notification .item_3.mod_103 {/*подросток*/
+  font-size: 100px;
+}
+#form-vertical .notification .item_3.mod_104 {/*родственников*/
+  font-size: 72px;
+}
 
-  #image-vertical {
-    /*height: 812px;*/
-    /*width: 1220px;*/
-    margin: auto;
-    min-width: 1220px;
-  }
-
-  button:focus {
-    outline: none;
-    border: none;
-  }
-  .menu-trigger,
-  .menu-trigger span {
-    display: inline-block;
-    transition: all .4s;
-    box-sizing: border-box;
-  }
-  .menu-trigger {
-    position: relative;
-    /*width: 50px;
-    height: 44px;*/
-    width: 36px;
-    height: 36px;
-    background: none;
-    border: none;
-    appearance: none;
-    cursor: pointer;
-  }
-  .menu-trigger span {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #2d3748;
-    border-radius: 4px;
-  }
-  .menu-trigger span:nth-of-type(1) {
-    top: 0;
-  }
-  .menu-trigger span:nth-of-type(2) {
-    top: 16px;
-  }
-  .menu-trigger span:nth-of-type(3) {
-    bottom: 0;
-  }
+/* col-2 */
+#form-vertical .col-2 {
+  /*padding: 0;*/
+  /*float: right;*/
+  /*width: 380px;*/
+  /*margin: 0;*/
+  /*position: relative;*/
+  height: inherit;
+}
+#form-vertical .editor {
+  position: relative;
+  text-align: left;
+  max-height: 605px;
+  overflow: hidden;
+}
 
 
-  #menu01.active span:nth-of-type(1) {
-    transform: translateY(16px) rotate(-45deg);
+
+/* editor */
+#form-vertical .codex-editor {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 1;
+}
+#form-vertical #editorjs-title .codex-editor__redactor,
+#form-vertical #editorjs-subtitle .codex-editor__redactor,
+#form-vertical #editorjs-editor .codex-editor__redactor,
+#form-vertical #editorjs-footer .codex-editor__redactor,
+#form-vertical #editorjs-top .codex-editor__redactor,
+#form-vertical #editorjs-bottom .codex-editor__redactor {
+  padding: 0 !important;
+}
+@media (min-width: 651px){
+  #form-vertical .codex-editor--narrow .codex-editor__redactor {
+    margin-right: 50px;
   }
-  #menu01.active span:nth-of-type(2) {
-    opacity: 0;
-  }
-  #menu01.active span:nth-of-type(3) {
-    transform: translateY(-16px) rotate(45deg);
-  }
+}
+#form-vertical .ce-block:first-of-type {
+  margin-top: 0;
+  padding-top: 6px;
+}
+#form-vertical .ce-block__content {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  -webkit-transition: background-color .15s ease;
+  transition: background-color .15s ease;
+}
+#form-vertical #editorjs-title .ce-block__content,
+#form-vertical #editorjs-subtitle .ce-block__content,
+#form-vertical #editorjs-editor .ce-block__content,
+#form-vertical #editorjs-footer .ce-block__content {
+  max-width: 100%;
+}
+#form-vertical .ce-header {
+  color: #000;
+  padding: 1em 0;
+  margin: 0;
+  margin-bottom: -0.9em;
+  line-height: 1.5em;
+  outline: none;
+  font-family: 'DejaVu Sans';
+  font-weight: 700;
+}
+#form-vertical h1.ce-header {
+  padding: 0 0 5px;
+  line-height: 30px;
+  margin: 0;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-indent: -1px;
+}
+#form-vertical h2.ce-header {
+  line-height: 20px;
+  padding: 0 0 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0;
+}
+#form-vertical .ce-paragraph {
+  line-height: 1.6em;
+  outline: none;
+}
+#form-vertical .ce-paragraph {
+  font-family: 'DejaVu Sans';
+  font-size: 20px;
+  padding: 0 0 5px;
+  line-height: 1.2em;
+  margin: 0;
+}
+#form-vertical .ce-block b {
+  font-weight: 700;
+}
+
+/* footer */
+#form-vertical .footer {
+  padding: 0 0 15px;
+}
+#form-vertical .col-2 .footer {
+  border-top: 4px solid #e21e22;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9;
+  padding-top: 10px;
+  color: #000;
+}
+#form-vertical .footer .ce-header {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#form-vertical .footer h1.ce-header {
+  font-size: 44px;
+  text-transform: initial;
+  line-height: 44px;
+}
+#form-vertical .footer h2.ce-header {
+  line-height: 30px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+#form-vertical .footer .ce-paragraph {
+  padding: 5px 0;
+  line-height: normal;
+  font-size: 20px;
+  text-align: center;
+}
+
+#image-vertical {
+  /*height: 812px;*/
+  /*width: 1220px;*/
+  margin: auto;
+  min-width: 1220px;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  /*width: 50px;
+  height: 44px;*/
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #2d3748;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 16px;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+
+#menu01.active span:nth-of-type(1) {
+  transform: translateY(16px) rotate(-45deg);
+}
+#menu01.active span:nth-of-type(2) {
+  opacity: 0;
+}
+#menu01.active span:nth-of-type(3) {
+  transform: translateY(-16px) rotate(45deg);
+}
 </style>
 
-<!--
-
-npm install vue-editor-js --save-dev
-
--->
