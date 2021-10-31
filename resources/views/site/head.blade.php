@@ -3,10 +3,18 @@
 
     <meta name="author" content="Contentim">
     {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
-    <meta name="generator" content="OctoberCMS">
+    <meta name="generator" content="Laravel + VueJS">
     <link rel="icon" type="image/png" href="https://selt.contentim.ru/themes/responsiv-clean/assets/images/contentim_favicon.png">
 
-    <title>sdfsdfsdf</title>
+    @if (Request::path() === '/')
+        <title>Конструктор ориентировок без вести пропавших</title>
+    @elseif (Request::path() === 'horizontal')
+        <title>Конструктор ориентировок без вести пропавших - Горизонтальная ориентация</title>
+    @elseif (Request::path() === 'vertical')
+        <title>Конструктор ориентировок без вести пропавших - Вертикальная ориентация</title>
+    @elseif (Request::path() === 'about')
+        <title>От автора и вопросы поддержки пользователей</title>
+    @endif
 
 
     <link rel="canonical" href="https://contentim.ru">
@@ -14,11 +22,11 @@
     <meta property="og:locale" content="ru_RU">
     <meta property="og:type" content="website">
     <meta property="og:title" content="">
-    <meta property="og:description" content="Публикации о фронтенде, бэкенде и некоторых личных увлечениях">
+    <meta property="og:description" content="Бесплатный конструктор ориентировок преследует лишь одну цель - облегчить труд тех, кому в силу своей волонтерской или профессиональной занятости необходимо создавать объявления о поиске без вести пропавших.">
     <meta property="og:url" content="https://contentim.ru">
     <meta property="og:site_name" content="Contentim - записки фронтендера из Воронежа">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="Публикации о фронтенде, бэкенде и некоторых личных увлечениях">
+    <meta name="twitter:description" content="Бесплатный конструктор ориентировок преследует лишь одну цель - облегчить труд тех, кому в силу своей волонтерской или профессиональной занятости необходимо создавать объявления о поиске без вести пропавших.">
     <meta name="twitter:title" content="https://contentim.ru">
 
     {{--<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">--}}
@@ -90,5 +98,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+
+    <style>
+        .bg-orange {
+            background: #ff9900 !important;
+        }
+        .bg-orange:hover {
+            background: #cc7a00 !important;
+        }
+    </style>
 
   </head>

@@ -3,10 +3,18 @@
 
     <meta name="author" content="Contentim">
     
-    <meta name="generator" content="OctoberCMS">
+    <meta name="generator" content="Laravel + VueJS">
     <link rel="icon" type="image/png" href="https://selt.contentim.ru/themes/responsiv-clean/assets/images/contentim_favicon.png">
 
-    <title>sdfsdfsdf</title>
+    <?php if(Request::path() === '/'): ?>
+        <title>Конструктор ориентировок без вести пропавших</title>
+    <?php elseif(Request::path() === 'horizontal'): ?>
+        <title>Конструктор ориентировок без вести пропавших - Горизонтальная ориентация</title>
+    <?php elseif(Request::path() === 'vertical'): ?>
+        <title>Конструктор ориентировок без вести пропавших - Вертикальная ориентация</title>
+    <?php elseif(Request::path() === 'about'): ?>
+        <title>От автора и вопросы поддержки пользователей</title>
+    <?php endif; ?>
 
 
     <link rel="canonical" href="https://contentim.ru">
@@ -90,6 +98,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+
+    <style>
+        .bg-orange {
+            background: #ff9900 !important;
+        }
+        .bg-orange:hover {
+            background: #cc7a00 !important;
+        }
+    </style>
 
   </head>
 <?php /**PATH /home/l/lutsyi1l/mikros.contentim.ru/resources/views/site/head.blade.php ENDPATH**/ ?>
