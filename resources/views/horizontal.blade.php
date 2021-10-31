@@ -11,15 +11,3 @@
     </body>
 </html>
 
-<!--
-/*
-use Anam\PhantomMagick\Converter;
-
-Converter::make('https://google.com')
-    ->toPdf()
-    ->download('google.pdf');
-
-Converter::make('https://google.com')
-    ->toPng()
-    ->download('yahoo.png');*/
--->

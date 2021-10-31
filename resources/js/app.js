@@ -32,10 +32,7 @@ Vue.component('horizontal', require('./components/Horizontal.vue').default);
 Vue.component('horizontal-body', require('./components/HorizontalBody.vue').default);
 Vue.component('vertical', require('./components/Vertical.vue').default);
 Vue.component('site-main', require('./components/Main.vue').default);
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// Vue.component('demo', require('./components/DemoComponent.vue').default);
 
-Vue.component('attachment-form', require('./components/AttachmentForm.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

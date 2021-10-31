@@ -1,7 +1,5 @@
 <template>
   <div class="flex w-full h-screen bg-gray-50">
-
-
     <sidebar-desktop></sidebar-desktop>
     <div class="flex flex-col flex-1 w-full">
       <site-header></site-header>
