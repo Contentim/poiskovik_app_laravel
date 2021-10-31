@@ -211,7 +211,7 @@
                             <div class="form-group">
                               <label class="label">
                                 <i class="material-icons">attach_file</i>
-                                <span class="title">Выбрать фото</span>
+                                <span class="title">Загрузить фото</span>
                                 <input type="file" name="image" accept="image/*" class="input__file" @change="onPhotoChange">
                               </label>
                             </div>

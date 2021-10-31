@@ -101,7 +101,7 @@
 
     <style>
         .bg-orange {
-            background: #ff9900 !important;
+            background: #F34606 !important;
         }
         .bg-orange:hover {
             background: #cc7a00 !important;
