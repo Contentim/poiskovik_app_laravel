@@ -74,7 +74,7 @@
                         c5.296,3.049,10.596,6.161,15.772,9.263L305.116,413.834z"/>
                 </g>
             </g>
-                        <g>
+            <g>
                 <g>
                     <path fill="#fff" d="M241.762,312.511c0,0,0,0-0.001-0.001c-16.48-39.789-62.256-58.752-102.051-42.271
                         C99.922,286.721,80.958,332.501,97.44,372.29c7.983,19.276,22.997,34.287,42.271,42.272c9.637,3.991,19.763,5.987,29.889,5.987
@@ -83,7 +83,7 @@
                         c21.667,0,42.265,12.84,51.06,34.07C232.234,349.395,218.834,381.742,190.72,393.388z"/>
                 </g>
             </g>
-                        <g>
+            <g>
                 <g>
                     <path fill="#fff" d="M496.553,100.936c-3.956-0.592-8.019-1.167-12.111-1.713c-2.062-6.857-4.816-13.505-8.214-19.819
                         c2.504-3.275,4.972-6.556,7.357-9.779c5.295-7.161,4.529-17.317-1.78-23.623l-15.808-15.806
@@ -116,7 +116,7 @@
                         c1.939,7.04,7.892,12.201,15.165,13.15c3.677,0.48,7.343,0.985,10.935,1.507V138.142z"/>
                 </g>
             </g>
-                        <g>
+            <g>
                 <g>
                     <path fill="#fff" d="M381.924,83.675c-25.585,0-46.401,20.815-46.401,46.401c0,25.587,20.815,46.402,46.401,46.402
                         s46.401-20.815,46.401-46.402C428.325,104.49,407.51,83.675,381.924,83.675z M381.924,155.851
@@ -190,23 +190,23 @@
 
         <div class="flex-center position-ref h@-screen bg@-gray-400" v-show="tab == 'editor'">
 
-          <div id="form-horizontal">
+          <div id="form-vertical">
             <div class="level_1">
               <div id="editor-top" class="editor-top"><div contenteditable="true">https://vk.com/poiskovik_app</div></div>
               <div class="level_2"
                    :style="{'border-color': this.$store.state.defaultColor}">
-                <div class="content">
-                  <div class="info">
-                    <div class="col-1">
+                <div class="content flex flex-col">
+                  <div class="info flex flex-wrap justify-between w-full">
 
-                      <div id="photo-container" v-if="$store.state.photo" class="">
-                        <img :src="$store.state.photo" class="img-responsive border-4" :style="{'border-color': this.$store.state.defaultColor}" width="380" >
+                    <div class="col-1 p-0 m-0 relative w-2/5">
+                      <div id="photo-container" v-if="$store.state.photo" class="h-full">
+                        <img :src="$store.state.photo" class="img-responsive border-4" :style="{'border-color': this.$store.state.defaultColor}" width="374" height="445">
                         <button
                             class="absolute top-0 left-0 absolute top-0 left-0 bg-white px-4 py-1 border-2 border-red-500 opacity-0"
                             v-if="$store.state.photo" @click="removePhoto" >Удалить фото</button>
                       </div>
-                      <div v-else class="img border-4 border-red-600" :style="{'border-color': this.$store.state.defaultColor}">
-                        <form id="upload_img" class="flex">
+                      <div v-else class="img border-4 " :style="{'border-color': this.$store.state.defaultColor}">
+                       <form  id="upload_img" class="flex">
                           <div class="upload_img_container">
                             <div class="form-group">
                               <label class="label">
@@ -218,23 +218,24 @@
                           </div>
                         </form>
                       </div>
-                      <div class="notification">
-                        <div class="item_1">помогите</div>
-                        <div class="item_2">найти</div>
-                        <div class="item_3" :class="'mod_' + $store.state.search.selected">
-                          <template v-for="object in $store.state.search.objects" v-if="object.id == $store.state.search.selected">{{object.label}}</template>
-                        </div>
-                      </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 p-0 pl-3 m-0 relative w-3/5">
                       <div class="editor">
                         <div id="editorjs-editor"></div>
                       </div>
-                      <div class="footer" :style="{'border-color': this.$store.state.defaultColor}">
-                        <div id="editorjs-footer"></div>
-                      </div>
                     </div>
                   </div>
+                  <div class="footer " :style="{'border-color': this.$store.state.defaultColor}">
+                    <div id="editorjs-footer"></div>
+                  </div>
+                  <div class="flex flex-col notification ">
+                    <div class="item_1 leading-none">помогите</div>
+                    <div class="item_2 leading-none">найти</div>
+                    <div class="item_3 leading-none " :class="'mod_' + $store.state.search.selected">
+                      <template v-for="object in $store.state.search.objects" v-if="object.id == $store.state.search.selected">{{object.label}}</template>
+                    </div>
+                  </div>
+
                 </div>
               </div>
               <div id="editor-bottom" class="editor-bottom"><div contenteditable="true">https://vk.com/poiskovik_app</div></div>
@@ -242,9 +243,9 @@
           </div>
         </div>
         <div class="flex-center position-ref h@-screen bg@-gray-400" v-show="tab == 'explorer'">
-          <div id="image-horizontal">
+          <div id="image-vertical">
 
-            <img src="https://fakeimg.pl/1220x835/" alt="resultImage" id="viewImage">
+            <img src="https://fakeimg.pl/835x1220/" alt="resultImage" id="viewImage">
           </div>
 
         </div>
@@ -280,7 +281,7 @@ export default {
 
       self.$store.commit('loader');
 
-      htmlToImage.toPng(document.getElementById('form-horizontal'))
+      htmlToImage.toPng(document.getElementById('form-vertical'))
           .then(function (dataUrl) {
             var img = new Image();
             img.src = dataUrl;
@@ -295,8 +296,8 @@ export default {
               self.$store.commit('success');
             },6000)
 
-            document.getElementById('image-horizontal').innerHTML = '';
-            document.getElementById('image-horizontal').append(img);
+            document.getElementById('image-vertical').innerHTML = '';
+            document.getElementById('image-vertical').append(img);
 
           })
           .catch(function (error) {
@@ -392,13 +393,13 @@ export default {
     downloadImage(){
       let now = new Date(),
           title = 'horizontal_';
-          title = title + now.getHours();
-          title = title + now.getMinutes();
-          title = title + now.getSeconds();
-          title = title + now.getMilliseconds();
-          title = title + '_'+ now.getFullYear();
+      title = title + now.getHours();
+      title = title + now.getMinutes();
+      title = title + now.getSeconds();
+      title = title + now.getMilliseconds();
+      title = title + '_'+ now.getFullYear();
 
-      let url = document.querySelector('#image-horizontal img').src;
+      let url = document.querySelector('#image-vertical img').src;
       let fileName = title + '.png';
 
       let xhr = new XMLHttpRequest();
@@ -422,45 +423,43 @@ export default {
 </script>
 
 <style>
-  #form-horizontal {
-    height: 835px;
-    width: 1220px;
+  #form-vertical {
+    width: 835px;
+    height: 1220px;
     display: block;
     /* margin: auto;*/
   }
-  #form-horizontal  .level_1 {
+  #form-vertical .level_1 {
     position: relative;
-    width: 1220px;
-    height: 835px;
+    width: 835px;
+    height: 1220px;
     background: #e21e22;
   }
 
   [contenteditable] {
-  outline: 0px solid transparent;
+    outline: 0px solid transparent;
   }
-  #form-horizontal .editor-top,
-  #form-horizontal  .editor-bottom {
-  position: absolute;
-  width: 100%;
+  #form-vertical .editor-top, .editor-bottom {
+    position: absolute;
+    width: 100%;
   }
-  #form-horizontal .editor-top {
-  top: 6px;
+  #form-vertical .editor-top {
+    top: 6px;
   }
-  #form-horizontal .editor-bottom {
-  bottom: 7px;
+  #form-vertical .editor-bottom {
+    bottom: 7px;
   }
-  #form-horizontal .editor-top div,
-  #form-horizontal .editor-bottom div {
-  text-align: center;
-  font-size: 26px;
-  color: #fff;
-  text-transform: uppercase;
+  #form-vertical .editor-top div, .editor-bottom div {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    text-transform: uppercase;
   }
 
 
-  #form-horizontal .level_2 {
-  border: 20px solid #e21e22;
-  /*height: calc(100% - 120px);*/
+  #form-vertical .level_2 {
+    border: 20px solid #e21e22;
+    /*height: calc(100% - 120px);*/
     height: calc(100% - 0px);
     padding: 15px;
     /*width: calc(100% - 70px);*/
@@ -469,30 +468,30 @@ export default {
     border-top: 45px solid #e21e22;
     border-bottom: 45px solid #e21e22;
   }
-  #form-horizontal .content {
+  #form-vertical .content {
     width: 100%;
     height: 100%;
   }
-  #form-horizontal .info {
-    width: 100%;
-    height: inherit;
+  #form-vertical .info {
+    min-height: 575px;
+    /*height: inherit;*/
   }
-  #form-horizontal .col-1 {
-    width: 380px;
+  #form-vertical .col-1 {
+    /*width: 380px;*/
     height: inherit;
-    float: left;
-    margin: 0;
-    padding: 0;
+    /*float: left;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
     overflow: hidden;
-    position: relative;
+    /*position: relative;*/
   }
-  #form-horizontal .col-1 .img {
+  #form-vertical .col-1 .img {
     position: relative;
     /*border: 3px solid #e21e22;*/
-    height: 485px;
+    height: 451px;
     overflow: hidden;
   }
-  #form-horizontal #upload_img {
+  #form-vertical #upload_img {
     height: 100%;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -513,29 +512,29 @@ export default {
     -ms-flex-align: center;
     align-items: center;
   }
-  #form-horizontal #upload_img .wrapp__info {
+  #form-vertical #upload_img .wrapp__info {
     color: grey;
     transition: 200ms color;
     text-align: center;
     margin: 0 0 10px;
   }
-  #form-horizontal #upload_img .wrapp__info div {
+  #form-vertical #upload_img .wrapp__info div {
     margin: 0;
     line-height: normal;
   }
-  #form-horizontal #upload_img .wrapp__info .size {
+  #form-vertical #upload_img .wrapp__info .size {
     font-weight: 600;
     color: #111;
   }
-  #form-horizontal #upload_img .upload_img_container {
+  #form-vertical #upload_img .upload_img_container {
     margin: 0 0 15px;
   }
-  #form-horizontal #upload_img .upload_img_container .form-group {
+  #form-vertical #upload_img .upload_img_container .form-group {
     padding: 0;
     margin: 0;
     width: 200px;
   }
-  #form-horizontal #upload_img .upload_img_container .label {
+  #form-vertical #upload_img .upload_img_container .label {
     /*width: 140px;*/
     border: 2px dashed grey;
     border-radius: 5px;
@@ -545,35 +544,32 @@ export default {
     cursor: pointer;
     text-align: center;
   }
-  #form-horizontal #upload_img .upload_img_container .label i,
-  #form-horizontal .upload_img_container .label .title {
+  #form-vertical #upload_img .upload_img_container .label i,
+  #form-vertical .upload_img_container .label .title {
     color: grey;
     transition: 200ms color;
   }
-  #form-horizontal #upload_img .upload_img_container .label i {
+  #form-vertical #upload_img .upload_img_container .label i {
     display: block;
     font-size: 42px;
     padding-bottom: 16px;
   }
-  #form-horizontal #upload_img .input__file {
+  #form-vertical #upload_img .input__file {
     opacity: 0;
     visibility: hidden;
     position: absolute;
   }
-  #form-horizontal #upload_img .upload_img_container input[type=file] {
+  #form-vertical #upload_img .upload_img_container input[type=file] {
     outline: 0;
     opacity: 0;
     pointer-events: none;
     user-select: none;
   }
-  #form-horizontal #photo-container {
-    max-height: 485px;
-  }
-  #form-horizontal #photo-container:hover button {
+  #form-vertical #photo-container:hover button {
     opacity: 1;
   }
 
-  #form-horizontal #remove_image {
+  #form-vertical #remove_image {
     position: absolute;
     top: 0;
     left: 0;
@@ -586,50 +582,49 @@ export default {
     background: #fff;
     opacity: .3;
   }
-  #form-horizontal #remove_image:hover {
+  #form-vertical #remove_image:hover {
     opacity: 1;
   }
 
-  #form-horizontal .notification {
+  #form-vertical .notification {
     font-family: 'DejaVu Sans';
-    font-size: 60px;
+    font-size: 120px;
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 70px;
   }
-  #form-horizontal .notification .item_1 {
-    margin: 0 0 20px;
+  #form-vertical .notification .item_1 {
+    /*margin: 0 0 20px;*/
   }
-  #form-horizontal .notification .item_2 {
-    font-size: 99px;
-    text-indent: -4px;
-    margin: 0 0 10px;
+  #form-vertical .notification .item_2 {
+    font-size: 170px;
+    letter-spacing: 20px;
+    text-align: center;
   }
-  #form-horizontal .notification .item_3.mod_101 {/*человек*/
-    font-size: 60px;
+  #form-vertical .notification .item_3.mod_101 {/*человек*/
+    font-size: 120px;
   }
-  #form-horizontal .notification .item_3.mod_102 { /*ребенок*/
-    font-size: 70px;
+  #form-vertical .notification .item_3.mod_102 { /*ребенок*/
+    font-size: 120px;
   }
-  #form-horizontal .notification .item_3.mod_103 {/*подросток*/
-    font-size: 52px;
+  #form-vertical .notification .item_3.mod_103 {/*подросток*/
+    font-size: 100px;
   }
-  #form-horizontal .notification .item_3.mod_104 {/*родственников*/
-    letter-spacing: .01em;
-    font-size: 36px;
+  #form-vertical .notification .item_3.mod_104 {/*родственников*/
+    font-size: 72px;
   }
 
   /* col-2 */
-  #form-horizontal .col-2 {
-    padding: 0;
-    float: right;
-    width: 735px;
-    margin: 0;
-    position: relative;
+  #form-vertical .col-2 {
+    /*padding: 0;*/
+    /*float: right;*/
+    /*width: 380px;*/
+    /*margin: 0;*/
+    /*position: relative;*/
     height: inherit;
   }
-  #form-horizontal .editor {
+  #form-vertical .editor {
     position: relative;
     text-align: left;
     max-height: 605px;
@@ -639,43 +634,43 @@ export default {
 
 
   /* editor */
-  #form-horizontal .codex-editor {
+  #form-vertical .codex-editor {
     position: relative;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 1;
   }
-  #form-horizontal #editorjs-title .codex-editor__redactor,
-  #form-horizontal #editorjs-subtitle .codex-editor__redactor,
-  #form-horizontal #editorjs-editor .codex-editor__redactor,
-  #form-horizontal #editorjs-footer .codex-editor__redactor,
-  #form-horizontal #editorjs-top .codex-editor__redactor,
-  #form-horizontal #editorjs-bottom .codex-editor__redactor {
+  #form-vertical #editorjs-title .codex-editor__redactor,
+  #form-vertical #editorjs-subtitle .codex-editor__redactor,
+  #form-vertical #editorjs-editor .codex-editor__redactor,
+  #form-vertical #editorjs-footer .codex-editor__redactor,
+  #form-vertical #editorjs-top .codex-editor__redactor,
+  #form-vertical #editorjs-bottom .codex-editor__redactor {
     padding: 0 !important;
   }
   @media (min-width: 651px){
-    #form-horizontal .codex-editor--narrow .codex-editor__redactor {
+    #form-vertical .codex-editor--narrow .codex-editor__redactor {
       margin-right: 50px;
     }
   }
-  #form-horizontal .ce-block:first-of-type {
+  #form-vertical .ce-block:first-of-type {
     margin-top: 0;
     padding-top: 6px;
   }
-  #form-horizontal .ce-block__content {
+  #form-vertical .ce-block__content {
     position: relative;
     max-width: 650px;
     margin: 0 auto;
     -webkit-transition: background-color .15s ease;
     transition: background-color .15s ease;
   }
-  #form-horizontal #editorjs-title .ce-block__content,
-  #form-horizontal #editorjs-subtitle .ce-block__content,
-  #form-horizontal #editorjs-editor .ce-block__content,
-  #form-horizontal #editorjs-footer .ce-block__content {
+  #form-vertical #editorjs-title .ce-block__content,
+  #form-vertical #editorjs-subtitle .ce-block__content,
+  #form-vertical #editorjs-editor .ce-block__content,
+  #form-vertical #editorjs-footer .ce-block__content {
     max-width: 100%;
   }
-  #form-horizontal .ce-header {
+  #form-vertical .ce-header {
     color: #000;
     padding: 1em 0;
     margin: 0;
@@ -685,39 +680,42 @@ export default {
     font-family: 'DejaVu Sans';
     font-weight: 700;
   }
-  #form-horizontal h1.ce-header {
-    padding: 0;
-    line-height: 60px;
+  #form-vertical h1.ce-header {
+    padding: 0 0 5px;
+    line-height: 30px;
     margin: 0;
-    font-size: 60px;
+    font-size: 30px;
     text-transform: uppercase;
     text-indent: -1px;
   }
-  #form-horizontal h2.ce-header {
-    line-height: 30px;
+  #form-vertical h2.ce-header {
+    line-height: 20px;
     padding: 0 0 20px;
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     display: block;
     margin: 0;
   }
-  #form-horizontal .ce-paragraph {
+  #form-vertical .ce-paragraph {
     line-height: 1.6em;
     outline: none;
   }
-  #form-horizontal .ce-paragraph {
+  #form-vertical .ce-paragraph {
     font-family: 'DejaVu Sans';
-    font-size: 22px;
+    font-size: 20px;
     padding: 0 0 5px;
     line-height: 1.2em;
     margin: 0;
   }
-  #form-horizontal .ce-block b {
+  #form-vertical .ce-block b {
     font-weight: 700;
   }
 
   /* footer */
-  #form-horizontal .col-2 .footer {
+  #form-vertical .footer {
+    padding: 0 0 15px;
+  }
+  #form-vertical .col-2 .footer {
     border-top: 4px solid #e21e22;
     position: absolute;
     bottom: 0;
@@ -727,28 +725,29 @@ export default {
     padding-top: 10px;
     color: #000;
   }
-  #form-horizontal .footer .ce-header {
+  #form-vertical .footer .ce-header {
     text-align: center;
     margin: 0;
     padding: 0;
   }
-  #form-horizontal .footer h1.ce-header {
+  #form-vertical .footer h1.ce-header {
     font-size: 44px;
     text-transform: initial;
+    line-height: 44px;
   }
-  #form-horizontal .footer h2.ce-header {
+  #form-vertical .footer h2.ce-header {
     line-height: 30px;
-    font-size: 26px;
+    font-size: 30px;
     text-transform: uppercase;
   }
-  #form-horizontal .footer .ce-paragraph {
-    padding: 0;
+  #form-vertical .footer .ce-paragraph {
+    padding: 5px 0;
     line-height: normal;
     font-size: 20px;
     text-align: center;
   }
 
-  #image-horizontal {
+  #image-vertical {
     /*height: 812px;*/
     /*width: 1220px;*/
     margin: auto;

@@ -1,48 +1,124 @@
 <template>
-  <main class="h-full p@b-16 overflow-y-auto bg-white">
-    <div class="c@ontainer grid p-2 mx-auto">
-      <div class="flex text-xl mb-6">
-        <div class="mr-4 border-b-2 border-gray-400 border-dashed cursor-pointer hover:border-purple-800 hover:text-purple-800">
-          редактор
-        </div>
-        <div class="border-b-2 border-gray-400 border-dashed cursor-pointer hover:border-purple-800 hover:text-purple-800">
-          просмотр и скачивание
-        </div>
-      </div>
-      <div class="h-full">
-        <div class="flex-center position-ref h-screen bg-gray-400">
-          vertical
+  <div class="flex w-full h-screen bg-gray-50 relative">
 
-          <div>selected: {{$store.state.search.object[$store.state.search.selected]}} == {{$store.state.search.selected}}</div>
-
-          <div v-show="$store.state.search.selected == 0">
-            ищем человека
-          </div>
-
-          <div v-show="$store.state.search.selected == 1">
-            ищем ребенка
-          </div>
-
-<!--          <div v-for="(object, index) in this.$store.state.search.object">
-            <div v-if="index == this.$store.state.search.selected">{{object}}</div>
-          </div>-->
-
-        </div>
+    <div class="absolute bg-orange z-50 rounded-md flex justify-center content-center text-gray-800" id="success" v-if="this.$store.state.on_success == true">
+      <div class="w-full h-full relative flex flex-wrap justify-center content-center">
+        <div class="absolute top-0 right-0 cursor-pointer border-b border-transparent border-dashed hover:border-black" id="close_success" @click="$store.commit('success')">Закрыть</div>
+        <span class="flex text-3xl font-medium">Готово!</span>
       </div>
     </div>
-  </main>
+
+    <vertical-sidebar></vertical-sidebar>
+    <div class="flex flex-col flex-1 w-full">
+      <site-header></site-header>
+      <vertical-body></vertical-body>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   data: function() {
     return {
-      // amount: 'this.initialAmount'
+
     }
   },
   mounted() {
-    // this.$store.commit('updateStr');
-    // console.log('Component DEMO mounted.', this.$store.state.test)
+    let self = this;
+
+    let body
+    if(localStorage.getItem('verticalBody')){
+      body = JSON.parse(localStorage.getItem('verticalBody'));
+    } else {
+      body = this.$store.state.vertical.text.body;
+    }
+
+    let editorjs_editor = new EditorJS({
+      /**
+       * Wrapper of Editor
+       */
+      holderId: 'editorjs-editor',
+      /**
+       * Tools list
+       */
+      tools: {
+        header: {
+          class: Header,
+          inlineToolbar: ['link'],
+          config: {
+            placeholder: 'Заголовок'
+          },
+          shortcut: 'CMD+SHIFT+H'
+        },
+      },
+      /**
+       * Initial Editor data
+       */
+      data: {
+        blocks: body
+      },
+      onReady: function(){
+        //saveButton.click();
+      },
+      onChange: function() {
+        editorjs_editor.save().then((outputData) => {
+          localStorage.setItem('verticalBody', JSON.stringify(outputData.blocks));
+        }).catch((error) => {
+          console.log('Saving failed: ', error)
+        });
+      }
+    });
+
+    /**
+     * footer
+     */
+    let footer
+    if(localStorage.getItem('verticalFooter')){
+      footer = JSON.parse(localStorage.getItem('verticalFooter'));
+    } else {
+      footer = this.$store.state.vertical.text.footer;
+    }
+    let editorjs_footer = new EditorJS({
+      /**
+       * Wrapper of Editor
+       */
+      holderId: 'editorjs-footer',
+      /**
+       * Tools list
+       */
+      tools: {
+        header: {
+          class: Header,
+          inlineToolbar: ['link'],
+          config: {
+            placeholder: 'Заголовок'
+          },
+          shortcut: 'CMD+SHIFT+H'
+        },
+      },
+      /**
+       * Initial Editor data
+       */
+      data: {
+        blocks: footer
+      },
+      onReady: function(){
+        //saveButton.click();
+      },
+      onChange: function() {
+        editorjs_footer.save().then((outputFooter) => {
+          localStorage.setItem('verticalFooter', JSON.stringify(outputFooter.blocks));
+        }).catch((error) => {
+          console.log('Saving failed: ', error)
+        });
+      }
+    });
+    // this.editor.render(state.vertical.text.footer);
+  },
+  methods: {
+
   }
 }
 </script>
+
+<style></style>

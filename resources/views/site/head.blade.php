@@ -2,7 +2,6 @@
     <meta charset="UTF-8">
 
     <meta name="author" content="Contentim">
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
     <meta name="generator" content="Laravel + VueJS">
     <link rel="icon" type="image/png" href="https://selt.contentim.ru/themes/responsiv-clean/assets/images/contentim_favicon.png">
 
@@ -16,18 +15,34 @@
         <title>От автора и вопросы поддержки пользователей</title>
     @endif
 
+    <link rel="canonical" href="https://poiskovik.app/">
+    <meta name="yandex-verification" content="1c96194a3deb430a" />
 
-    <link rel="canonical" href="https://contentim.ru">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(73503937, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/73503937" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <meta property="og:locale" content="ru_RU">
     <meta property="og:type" content="website">
     <meta property="og:title" content="">
     <meta property="og:description" content="Бесплатный конструктор ориентировок преследует лишь одну цель - облегчить труд тех, кому в силу своей волонтерской или профессиональной занятости необходимо создавать объявления о поиске без вести пропавших.">
-    <meta property="og:url" content="https://contentim.ru">
-    <meta property="og:site_name" content="Contentim - записки фронтендера из Воронежа">
+    <meta property="og:url" content="https://poiskovik.app/">
+    <meta property="og:site_name" content="poiskovik.app - конструктор ориентировок поиска пропавших без вести">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Бесплатный конструктор ориентировок преследует лишь одну цель - облегчить труд тех, кому в силу своей волонтерской или профессиональной занятости необходимо создавать объявления о поиске без вести пропавших.">
-    <meta name="twitter:title" content="https://contentim.ru">
+    <meta name="twitter:title" content="https://poiskovik.app/">
 
     {{--<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ URL::asset('/css/css2.css')}}">
@@ -123,4 +138,4 @@
         }
     </style>
 
-  </head>
+</head>

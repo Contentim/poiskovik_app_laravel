@@ -138,7 +138,7 @@ export default new Vuex.Store({
                     {
                         type: "header",
                         data: {
-                            text: "ЁЙамилия",
+                            text: "Фамилия",
                             level: 1
                         }
                     },
@@ -224,7 +224,84 @@ export default new Vuex.Store({
                 ]
             }
         },
-        vertical: {},
+        vertical: {
+            text: {
+                body: [
+                    {
+                        type: "header",
+                        data: {
+                            text: "Фамилия",
+                            level: 1
+                        }
+                    },
+                    {
+                        type: "header",
+                        data: {
+                            text: "Имя Отчество, возраст",
+                            level: 2
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : '<b>01.01.2021 года в 8:00 ушла из дома по ул. Ленина в неизвестном направлении.<b>'
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : '<b>Приметы:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : '<b>Одежда:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : '<b>Особые приметы:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.'
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : '<b>Состояние здоровья:</b> Деменция. Инсулинзависимый...'
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : '<b>Вещи:</b> Lorem ipsum dolor sit amet, consectetur.'
+                        }
+                    },
+                ],
+                footer: [
+                    {
+                        type: "header",
+                        data: {
+                            text: "Нуждается в медицинской помощи",
+                            level: 2
+                        }
+                    },
+                    {
+                        type : 'paragraph',
+                        data : {
+                            text : 'Просим сообщать любую информацию по телефону горячей линии:'
+                        }
+                    },
+                    {
+                        type: "header",
+                        data: {
+                            text: "8(800) 123-45-67 или 112",
+                            level: 1
+                        }
+                    },
+                ]
+            }
+        },
         search: {
             objects: [
                 {

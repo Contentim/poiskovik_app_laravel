@@ -3,7 +3,7 @@
     @include('site.head')
     <body>
 
-        <div id="app" class="flex w-full h-screen bg-gray-50 dark:bg-gray-900">
+        <div id="app" class="flex w-full h-screen bg-gray-50">
             <horizontal></horizontal>
         </div>
 

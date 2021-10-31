@@ -25,13 +25,14 @@ import store from './store'
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('sidebar-desktop', require('./components/SidebarDesktop.vue').default);
-Vue.component('sidebar-mobile', require('./components/SidebarMobile.vue').default);
+Vue.component('horizontal-sidebar', require('./components/HorizontalSidebar.vue').default);
+Vue.component('vertical-sidebar', require('./components/VerticalSidebar.vue').default);
 Vue.component('site-header', require('./components/Header.vue').default);
 Vue.component('horizontal', require('./components/Horizontal.vue').default);
 Vue.component('home', require('./components/Home.vue').default);
 Vue.component('horizontal-body', require('./components/HorizontalBody.vue').default);
 Vue.component('vertical', require('./components/Vertical.vue').default);
+Vue.component('vertical-body', require('./components/VerticalBody.vue').default);
 Vue.component('site-main', require('./components/Main.vue').default);
 
 

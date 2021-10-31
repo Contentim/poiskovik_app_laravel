@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <sidebar-desktop></sidebar-desktop>
+    <horizontal-sidebar></horizontal-sidebar>
     <div class="flex flex-col flex-1 w-full">
       <site-header></site-header>
       <horizontal-body></horizontal-body>
