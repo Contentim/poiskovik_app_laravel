@@ -1,11 +1,13 @@
-## Установить компоненты Composer
+## Install
+
+### Установить компоненты Composer
 ```
-composer install
+$ composer install
 ```
 
-## Установить компоненты NodeJS
+### Установить компоненты NodeJS
 ```
-npm install
+$ npm install
 ```
 
 ## License
