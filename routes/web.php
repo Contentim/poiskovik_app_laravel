@@ -27,6 +27,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/sitemap.xml', [SitemapXmlController::class, 'index']);
+
 Auth::routes();
 
 //Route::post('/converter', 'ConverterController@store');
