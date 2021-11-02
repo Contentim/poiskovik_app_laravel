@@ -192,7 +192,7 @@
 
           <div id="photo-container" v-if="$store.state.image_label" class="relative inline-block">
 
-            <div class="w-full h-full bg-gray-400 absolute opacity-50" v-if="$store.state.label.on == true"></div>
+            <div class="w-full h-full bg-gray-400 absolute opacity-50 z-10" v-if="$store.state.label.on == true"></div>
             <div class="flex flex-wrap content-center justify-center absolute top-0 left-0 h-full w-full">
               <img :src="asset('assets/images/najden_zhiv.png')" v-show="$store.state.label.male.alive == true" class="z-20" alt="">
               <img :src="asset('assets/images/najdena_zhiva.png')" v-show="$store.state.label.female.alive == true" class="z-20" alt="">
