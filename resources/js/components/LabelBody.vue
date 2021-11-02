@@ -188,7 +188,7 @@
 
       <div class="h-full">
 
-        <div class="flex-center position-ref h@-screen bg@-gray-400" v-show="tab == 'editor'"> 
+        <div class="flex-center position-ref h@-screen bg@-gray-400" v-show="tab == 'editor'">
 
           <div id="photo-container" v-if="$store.state.image_label" class="relative inline-block">
 
@@ -200,12 +200,12 @@
               <img :src="asset('assets/images/pogibla.png')" v-show="$store.state.label.female.died == true" class="z-20" alt="">
             </div>
 
-            <img :src="$store.state.image_label" class="img-responsive inline-block">
+            <img :src="$store.state.image_label" class="img-responsive inline-block" :class="{died_filter: ($store.state.label.male.died == true || $store.state.label.female.died == true)}">
             <button
                 class="absolute top-0 left-0 absolute top-0 left-0 bg-white px-4 py-1 border-2 border-red-500 opacity-0"
                 v-if="$store.state.image_label" @click="removeImageLabel">Удалить фото</button>
           </div>
-          <div v-else id="image-container" class="img border-4 border-red-600" :style="{'border-color': this.$store.state.defaultColor}">
+          <div v-else id="image-container" class="img border-4 border-red-600" >
             <form id="upload_img" class="flex">
               <div class="upload_img_container">
                 <div class="form-group">
@@ -257,7 +257,7 @@ export default {
 
       self.$store.commit('loader');
 
-      htmlToImage.toPng(document.getElementById('photo-container'))
+      htmlToImage.toPng(document.getElementById('photo-container'), {imagePlaceholder: 'https://fakeimg.pl/350x350/'})
           .then(function (dataUrl) {
             var img = new Image();
             img.src = dataUrl;
@@ -393,6 +393,11 @@ export default {
 <style>
 [contenteditable] {
   outline: 0px solid transparent;
+}
+
+.died_filter {
+  /*filter: grayscale(1);*/
+  filter: blur(2px);
 }
 
 #image-container {
