@@ -200,7 +200,11 @@
               <img :src="asset('assets/images/pogibla.png')" v-show="$store.state.label.female.died == true" class="z-20" alt="">
             </div>
 
-            <img :src="$store.state.image_label" class="img-responsive inline-block" :class="{died_filter: ($store.state.label.male.died == true || $store.state.label.female.died == true)}">
+            <img
+                :src="$store.state.image_label"
+                class="img-responsive inline-block"
+                :class="{alive_filter: ($store.state.label.male.alive == true || $store.state.label.female.alive == true)}"
+                :class="{died_filter: ($store.state.label.male.died == true || $store.state.label.female.died == true)}">
             <button
                 class="absolute top-0 left-0 absolute top-0 left-0 bg-white px-4 py-1 border-2 border-red-500 opacity-0"
                 v-if="$store.state.image_label" @click="removeImageLabel">Удалить фото</button>
@@ -395,6 +399,10 @@ export default {
   outline: 0px solid transparent;
 }
 
+.alive_filter {
+  /*filter: grayscale(1);*/
+  filter: blur(2px);
+}
 .died_filter {
   /*filter: grayscale(1);*/
   filter: blur(2px) grayscale(1);
