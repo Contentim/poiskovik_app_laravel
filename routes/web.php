@@ -31,7 +31,9 @@ Route::get('/label', function () {
     return view('label');
 });
 
-Route::get('/sitemap.xml', [SitemapXmlController::class, 'index']);
+Route::get('/sitemap.xml', 'SitemapXmlController@index');
+
+
 
 Auth::routes();
 

@@ -36,7 +36,7 @@
     </url>
     <url>
 
-        <loc>http://poiskovik.app/about</loc> 
+        <loc>http://poiskovik.app/about</loc>
 
         <lastmod>2021-01-11</lastmod>
 
