@@ -201,6 +201,10 @@
             </div>
 
             <img
+                :src="$store.state.image_label" 
+                class="img-responsive inline-block"
+                v-if="$store.state.label.on == false && $store.state.label.male.alive == false && $store.state.label.female.alive == false && $store.state.label.male.died == false && $store.state.label.female.died == false">
+            <img
                 :src="$store.state.image_label"
                 class="img-responsive alive_filter inline-block"
                 v-if="$store.state.label.male.alive == true || $store.state.label.female.alive == true">
@@ -209,7 +213,7 @@
                 class="img-responsive died_filter inline-block"
                 v-if="$store.state.label.male.died == true || $store.state.label.female.died == true">
             <button
-                class="absolute top-0 left-0 absolute top-0 left-0 bg-white px-4 py-1 border-2 border-red-500 opacity-0"
+                class="absolute top-0 left-0 absolute top-0 left-0 bg-white px-4 py-1 border-2 border-red-500 opacity-0 z-30"
                 v-if="$store.state.image_label" @click="removeImageLabel">Удалить фото</button>
           </div>
           <div v-else id="image-container" class="img border-4 border-red-600" >
