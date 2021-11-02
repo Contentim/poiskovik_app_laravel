@@ -397,7 +397,7 @@ export default {
 
 .died_filter {
   /*filter: grayscale(1);*/
-  filter: blur(2px);
+  filter: blur(2px) grayscale(1);
 }
 
 #image-container {
