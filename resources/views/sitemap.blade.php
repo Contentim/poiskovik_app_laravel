@@ -46,4 +46,16 @@
 
     </url>
 
+    <url>
+
+        <loc>https://poiskovik.app/label</loc>
+
+        <lastmod>2021-02-11</lastmod>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+
 </urlset>
