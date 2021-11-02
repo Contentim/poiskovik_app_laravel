@@ -28,6 +28,13 @@
 
         <meta property="og:url" content="https://poiskovik.app/vertical">
         <link rel="canonical" href="https://poiskovik.app/vertical">
+    @elseif (Request::path() === 'label')
+        <title>Конструктор ориентировок поиска пропавших без вести - Метка по результатам поиска</title>
+        <meta property="og:title" content="Конструктор ориентировок поиска пропавших без вести - Метка по результатам поиска">
+        <meta name="twitter:title" content="Конструктор ориентировок поиска пропавших без вести - Метка по результатам поиска">
+
+        <meta property="og:url" content="https://poiskovik.app/label">
+        <link rel="canonical" href="https://poiskovik.app/label">
     @elseif (Request::path() === 'about')
         <title>От автора конструктора и вопросы поддержки пользователей</title>
         <meta property="og:title" content="От автора конструктора и вопросы поддержки пользователей">

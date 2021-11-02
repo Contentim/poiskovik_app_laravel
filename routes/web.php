@@ -27,6 +27,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/label', function () {
+    return view('label');
+});
+
 Route::get('/sitemap.xml', [SitemapXmlController::class, 'index']);
 
 Auth::routes();
