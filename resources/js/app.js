@@ -6,11 +6,14 @@
 
 require('./bootstrap');
 window.Vue = require('vue');
+Vue.mixin(require('./asset'));
+
 import EditorJS from '@editorjs/editorjs'
 window.EditorJS = EditorJS
 var htmlToImage = require('html-to-image');
 
 import store from './store'
+
 // import * as mutations from './store/mutation-types'
 // import * as actions from './store/action-types'
 
@@ -34,6 +37,10 @@ Vue.component('horizontal-body', require('./components/HorizontalBody.vue').defa
 Vue.component('vertical', require('./components/Vertical.vue').default);
 Vue.component('vertical-body', require('./components/VerticalBody.vue').default);
 Vue.component('site-main', require('./components/Main.vue').default);
+
+Vue.component('label-component', require('./components/LabelComponent.vue').default);
+Vue.component('label-sidebar', require('./components/LabelSidebar.vue').default);
+Vue.component('label-body', require('./components/LabelBody.vue').default);
 
 
 /**

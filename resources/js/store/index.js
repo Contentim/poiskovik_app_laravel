@@ -326,7 +326,19 @@ export default new Vuex.Store({
         photo: '',
         defaultColor: '#ff0000',
         loader: false,
-        on_success: false
+        on_success: false,
+        image_label: '',
+        label: {
+            on: true,
+            male: {
+                alive: true,
+                died: false
+            },
+            female: {
+                alive: false,
+                died: false
+            }
+        }
     },
     modules: {
         // users
@@ -353,7 +365,39 @@ export default new Vuex.Store({
         },
         success(state){
             state.on_success = !state.on_success;
-        }
+        },
+        createImageLabel(state, image){
+            state.image_label = image;
+        },
+        removeImageLabel(state){
+            state.image_label = '';
+            localStorage.removeItem('image_label')
+        },
+        returnImageLabel(state, base64){
+            state.image_label = base64;
+        },
+        onLabel(state, value){
+            state.label.on = true;
+            state.label.male.alive = state.label.male.died = state.label.female.alive = state.label.female.died = false;
+
+            switch (value){
+                case 'alive_male':
+                    state.label.male.alive = true;
+                    break;
+                case 'alive_female':
+                    state.label.female.alive = true;
+                    break;
+                case 'died_male':
+                    state.label.male.died = true;
+                    break;
+                case 'died_female':
+                    state.label.female.died = true;
+                    break;
+                case 'off':
+                    state.label.on = false;
+                    break;
+            }
+        },
     },
     getters: {
         selectDefaultId: state => {

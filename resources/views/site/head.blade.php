@@ -4,7 +4,7 @@
     <meta name="author" content="Contentim">
     <meta name="generator" content="Laravel + VueJS">
     <link href='{{ url('sitemap.xml') }}' rel='alternate' title='Sitemap' type='application/rss+xml'/>
-    
+
     <link rel="icon" type="image/png" href="https://selt.contentim.ru/themes/responsiv-clean/assets/images/contentim_favicon.png">
 
     @if (Request::path() === '/')
@@ -163,5 +163,9 @@
             right: 7px;
         }
     </style>
+
+    <script>
+        window._asset = '{{ asset('') }}';
+    </script>
 
 </head>

@@ -31,6 +31,19 @@
           <span class="ml-4">Вертикальная ориентация</span>
         </a>
 
+        <a class="px-4 py-1 inline-flex items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="/label">
+          <svg version="1.1" width="24" height="26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 486.82 486.82" style="enable-background:new 0 0 486.82 486.82;" xml:space="preserve">
+            <g>
+              <path fill="#F34606" d="M486.82,21.213L465.607,0l-42.768,42.768H238.991L0,281.759L205.061,486.82l238.992-238.991V63.98L486.82,21.213z
+                 M414.053,235.403L205.061,444.394L42.427,281.759L251.418,72.768h141.421l-40.097,40.097c-14.56-6.167-32.029-3.326-43.898,8.543
+                c-15.621,15.621-15.621,40.948,0,56.569c15.621,15.621,40.948,15.621,56.568,0c11.869-11.869,14.71-29.338,8.543-43.898
+                l40.097-40.097V235.403z"/>
+            </g>
+          </svg>
+          <span class="ml-4">Поставить метку</span>
+        </a>
+
         <a class="px-4 py-1 inline-flex items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="/about">
           <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" stroke="#F34606" stroke-width="2" d="M12,23 C18.0751322,23 23,18.0751322 23,12 C23,5.92486775 18.0751322,1 12,1 C5.92486775,1 1,5.92486775 1,12 C1,18.0751322 5.92486775,23 12,23 Z M15,23 L15,17 M9,23 L9,17 M15,7 L15,1 M9,7 L9,1 M12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 Z M1,15 L7,15 M1,9 L7,9 M17,15 L23,15 M17,9 L23,9" transform="rotate(45 12 12)"/>
