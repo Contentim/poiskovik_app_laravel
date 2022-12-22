@@ -2,7 +2,7 @@
 
 ### Установить компоненты Composer
 ```
-$ composer install
+$ composer install --ignore-platform-reqs
 ```
 
 ### Установить компоненты NodeJS
