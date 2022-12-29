@@ -15,6 +15,11 @@ $ npm install
 $ ln -s public public_html
 ```
 
+### Включить возможность получать путь к файлам из storage
+```
+$ php artisan storage:link
+```
+
 
 ## Issue Reporting
 If you have found a bug or if you have a feature request, please report them at this repository [issues section](https://github.com/Contentim/poiskovik_app_laravel/issues). 
