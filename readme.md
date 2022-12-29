@@ -10,6 +10,12 @@ $ composer install --ignore-platform-reqs
 $ npm install
 ```
 
+### Создание ссылки public, указывающая на public_html
+```
+$ ln -s public public_html
+```
+
+
 ## Issue Reporting
 If you have found a bug or if you have a feature request, please report them at this repository [issues section](https://github.com/Contentim/poiskovik_app_laravel/issues). 
 
