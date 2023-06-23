@@ -1,0 +1,435 @@
+/* Reset */
+@import 'tailwindcss/base';
+@import 'reset';
+
+/* Components */
+@import 'tailwindcss/components';
+@import 'buttons';
+@import 'form';
+
+/* Utilities */
+@import 'tailwindcss/utilities';
+
+/* Fonts */
+/*
+    DejaVu Sans ExtraLight - 200
+    DejaVu Sans Normal - 400
+    DejaVu Sans Oblique - 400
+    DejaVu Sans Bold - 700
+    DejaVu Sans Bold Oblique - 700
+*/
+@layer base {
+    @font-face {
+        font-family: 'DejaVu Sans ExtraLight';
+        src: local('DejaVu Sans ExtraLight'), local('DejaVuSans-ExtraLight'), url('/fonts/dejavusansextralight.woff2') format('woff2'), url('/fonts/dejavusansextralight.woff') format('woff'), url('/fonts/dejavusansextralight.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'DejaVu Sans Normal';
+        src: local('DejaVu Sans'), local('DejaVuSans'), url('/fonts/dejavusans.woff2') format('woff2'), url('/fonts/dejavusans.woff') format('woff'), url('/fonts/dejavusans.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'DejaVu Sans Oblique';
+        src: local('DejaVu Sans Oblique'), local('DejaVuSans-Oblique'), url('/fonts/dejavusansoblique.woff2') format('woff2'), url('/fonts/dejavusansoblique.woff') format('woff'), url('/fonts/dejavusansoblique.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'DejaVu Sans Bold';
+        src: local('DejaVu Sans Bold'), local('DejaVuSans-Bold'), url('/fonts/dejavusansbold.woff2') format('woff2'), url('/fonts/dejavusansbold.woff') format('woff'), url('/fonts/dejavusansbold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'DejaVu Sans Bold Oblique';
+        src: local('DejaVu Sans Bold Oblique'), local('DejaVuSans-BoldOblique'), url('/fonts/dejavusansboldoblique.woff2') format('woff2'), url('/fonts/dejavusansboldoblique.woff') format('woff'), url('/fonts/dejavusansboldoblique.ttf') format('truetype');
+        font-weight: 700;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/materialicons/v111/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+    }
+    
+    
+  }
+
+  /* Common */
+  button:focus {
+    outline: none;
+    border: none;
+  }
+  [contenteditable] {
+    outline: 0px solid transparent;
+  }
+  /* END common */
+
+  /**/
+  .el-notification__title {
+    line-height: 20px !important;
+    text-align: left;
+  }
+  .el-notification__content p {
+    line-height: 19px !important;
+    text-align: left !important;
+  }
+  .header-dropdown-nav .el_divider {
+    margin: 10px 0;
+  }
+
+  /*
+    DejaVu Sans ExtraLight - 200
+    DejaVu Sans Normal - 400
+    DejaVu Sans Oblique - 400
+    DejaVu Sans Bold - 700
+    DejaVu Sans Bold Oblique - 700
+  */
+
+  /* Editor */
+  .form-orientation  .ql-container {
+    border-left: 3px solid transparent;
+    padding: 0 0 0 10px;
+  }
+  .form-orientation .ql-editor {
+    font-family: 'DejaVu Sans';
+    font-size: 20px;
+    padding: 0;
+    line-height: 1.2em;
+    margin: 0;
+    color: #111;
+  }
+  .el-color-dropdown__btn {
+    background: rgb(206, 86, 126);
+    color: #fff;
+  } 
+  .el-loading-text {
+    font-family: 'DejaVu Sans Bold';
+    font-size: 25px !important;
+    font-weight: 700;
+  }
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+  .form-orientation .EditorFocus {
+    border-left: 3px dashed #F34606;
+  }
+
+  .form-orientation .ql-bubble .ql-editor h1 {
+    font-family: 'DejaVu Sans Bold';
+    padding: 0;
+    line-height: 60px;
+    margin: 0;
+    font-size: 60px;
+    text-indent: -4px;
+  }
+
+  .form-orientation .ql-bubble .ql-editor h2 {
+    font-family: 'DejaVu Sans Bold';
+    line-height: 30px;
+    padding: 0;
+    font-size: 30px;
+    display: block;
+    margin: 0 0 5px;
+    text-indent: -2px;
+  }
+  .form-orientation .ql-bubble .ql-editor h3 {
+    font-family: 'DejaVu Sans Bold';
+    line-height: 25px;
+    padding: 0;
+    font-size: 22px;
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  .form-orientation .ql-bubble .ql-editor p {
+    font-family: 'DejaVu Sans Normal';
+    font-size: 20px;
+    margin: 0 0 7px;
+    line-height: 1.2em;
+    padding: 0;
+    font-weight: 200;
+  }
+
+  .form-orientation .ql-bubble .ql-editor b, .form-orientation .ql-bubble .ql-editor strong {
+    font-family: 'DejaVu Sans Bold';
+  }
+
+  .form-orientation .ql-bubble .ql-editor em, .form-orientation .ql-bubble .ql-editor i {
+    font-family: 'DejaVu Sans Oblique';
+  }
+
+  .form-orientation .ql-bubble .ql-editor strong em, .form-orientation .ql-bubble .ql-editor strong i {
+    font-family: 'DejaVu Sans Bold Oblique';
+  }
+
+  /* constructor */
+  #editor-top, #editor-bottom {
+    position: absolute;
+    width: 100%;
+  }
+  #editor-top {
+    top: 6px;
+  }
+  #editor-bottom {
+    bottom: 7px;
+  }
+  #editor-top div, #editor-bottom div {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  #editor-top div {
+    margin-top: 3px;
+  }
+  #editor-bottom div {
+    margin-bottom: 3px;
+  }
+  .level_2 > .content {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .form-orientation .col-1 {
+    height: inherit;
+    overflow: hidden;
+  }
+  /* constructor column 1 */
+  .form-orientation .level_1 {
+    position: relative;
+    background: transparent;
+  }  
+ 
+  /* constructor column 2 */
+  .form-orientation .level_2 {
+    border: 20px solid transparent;
+    height: calc(100% - 0px);
+    padding: 15px;
+    width: calc(100% - 0px);
+    background: #fff;
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+  }
+  .form-orientation .level_2 .notification {
+    font-family: 'DejaVu Sans Bold';
+    font-size: 115px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 70px;
+    color: #111;
+  }
+
+  .form-orientation .notification .item_2 {
+    letter-spacing: 0px;
+    text-align: center;
+    text-indent: 0;
+    margin: 0;
+  }
+
+  #BodyEditor {
+    color: #000;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5em;
+    outline: none;
+    font-family: 'DejaVu Sans Normal';
+    font-weight: 700;
+  }
+
+  #BodyEditor .ql-editor {
+    padding: 0 0 0 10px;
+  }
+
+  #FooterEditor {
+    color: #000;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5em;
+    outline: none;
+    font-family: 'DejaVu Sans Normal';
+    font-weight: 700;
+  }
+  #FooterEditor .ql-editor {
+    padding: 10px 0 0 0;
+  }
+
+  /* Form */
+  .form-orientation .col-1 .img {
+    position: relative;
+    overflow: hidden;
+  }
+  #upload_img {
+    height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  #upload_img .wrapp__info {
+    color: grey;
+    transition: 200ms color;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  #upload_img .wrapp__info div {
+    margin: 0;
+    line-height: normal;
+  }
+  #upload_img .wrapp__info .size {
+    font-weight: 600;
+    color: #111;
+  }
+  #upload_img .upload_img_container {
+    /*margin: 0 0 15px;*/
+  }
+  #upload_img .upload_img_container .form-group {
+    padding: 0;
+    margin: 0;
+    width: 200px;
+  }
+  #upload_img .upload_img_container .label {
+    /*width: 140px;*/
+    border: 2px dashed grey;
+    border-radius: 5px;
+    display: block;
+    padding: 1.2em;
+    transition: border 300ms ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  #upload_img .upload_img_container .label i,
+  .upload_img_container .label .title {
+    color: grey;
+    transition: 200ms color;
+  }
+  #upload_img .upload_img_container .label i {
+    display: block;
+    font-size: 42px;
+    padding-bottom: 16px;
+  }
+  #upload_img .input__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+  #upload_img .upload_img_container input[type=file] {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  #photo-container {
+    max-height: 485px;
+    border-style: solid;
+    overflow: hidden;
+  }
+  #form-horizontal #photo-container,
+  #form-vertical #photo-container {
+    border-width: 4px;
+  }
+  
+  #photo-container:hover button {
+    opacity: 1;
+  }
+  .wrapp_photo-container {
+    border-width: 4px;
+    border-style: solid;
+  }
+
+  #remove_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #555;
+    line-height: normal;
+    width: 183px;
+    margin: auto;
+    border: 1px solid #555;
+    padding: 10px 0;
+    background: #fff;
+    opacity: .3;
+  }
+  #remove_image:hover {
+    opacity: 1;
+  }
+
+  /* col-2 */
+  .form-orientation .col-2 {
+    height: inherit;
+  }
+
+/* burger menu */
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #2d3748;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 16px;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+#menu01.active span:nth-of-type(1) {
+  transform: translateY(16px) rotate(-45deg);
+}
+#menu01.active span:nth-of-type(2) {
+  opacity: 0;
+}
+#menu01.active span:nth-of-type(3) {
+  transform: translateY(-16px) rotate(45deg);
+}
