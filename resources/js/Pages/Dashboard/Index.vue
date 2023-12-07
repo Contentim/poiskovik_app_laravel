@@ -86,9 +86,6 @@
     data() {
       return {};
     },
-    created(){
-      // asdasd
-    },
     layout: Layout,
   };
 </script>
