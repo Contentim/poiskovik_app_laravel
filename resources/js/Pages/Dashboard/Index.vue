@@ -86,6 +86,9 @@
     data() {
       return {};
     },
+    created(){
+
+    },
     layout: Layout,
   };
 </script>
